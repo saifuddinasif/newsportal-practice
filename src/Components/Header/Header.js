@@ -13,7 +13,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         
-           <LeftSide></LeftSide>
+      <div className='d-lg-none'>
+      <LeftSide></LeftSide>
+      </div>
 
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
