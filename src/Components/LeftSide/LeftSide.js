@@ -1,6 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LeftSide = () => {
 
@@ -23,7 +24,14 @@ const LeftSide = () => {
 
     return (
         <div>
-            <h1>LeftSide {categories.length}</h1>
+            <h1>All Categories : {categories.length}</h1>
+            {
+                categories.map (category => <p key={category.id}>
+           
+               <Link to={`/category/${category.id}`}>{category.name}</Link>
+
+                </p>)
+            }
         </div>
     );
 };
