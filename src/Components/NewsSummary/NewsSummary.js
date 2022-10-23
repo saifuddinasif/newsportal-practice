@@ -2,14 +2,14 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image'
-import { FaRegBookmark, FaShareAlt } from 'react-icons/fa';
+import { FaRegBookmark, FaShareAlt, FaStar,FaEye } from 'react-icons/fa';
 
 
 
 const NewsSummary = ({news}) => {
 
 
-    const {_id, title,details, image_url,total_view,author} =news
+    const {_id, title,details,rating, image_url,total_view,author} =news
 
 
     return (
@@ -20,14 +20,14 @@ const NewsSummary = ({news}) => {
             <Image 
             
             roundedCircle
-            src={author.img}
+            src={author?.img}
               
             style={{height: '60px'}}
             >
              
             </Image>
                 <div>
-                    <p>{author.name}</p>
+                    <p className='mb-1'>{author.name}</p>
                     <p>{author.published_date}</p>
                 </div>
         </div>
@@ -53,7 +53,19 @@ const NewsSummary = ({news}) => {
         </Card.Text>
         
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className='d-flex justify-content-between align-items-center'>
+
+
+        <div>
+            <FaStar></FaStar>
+             <span>{rating?.number}</span>
+        </div>
+
+        <div>
+            <FaEye></FaEye>
+            <span>{total_view}</span>
+        </div>
+      </Card.Footer>
     </Card>
     );
 };
