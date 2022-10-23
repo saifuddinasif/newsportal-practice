@@ -13,10 +13,10 @@ const Category = () => {
             <h4> This  Category  has : {newss.length}   news </h4>
 
             {
-                newss.map(news => <NewsSummary
+                newss.map(newss=> <NewsSummary
                 
-                key={news._id}
-                news= {news}
+                key={newss._id}
+                news= {newss}
                 >
 
                 </NewsSummary>)
