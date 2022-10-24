@@ -8,6 +8,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Context';
 import LeftSide from '../LeftSide/LeftSide';
+import Button from 'react-bootstrap/Button';
 const Header = () => {
   
   const {user} = useContext(AuthContext)
@@ -33,6 +34,13 @@ const Header = () => {
             </NavDropdown> */}
           </Nav>
           <Nav>
+              <div>
+              <Link to='/login'><Button variant="outline-success">Login</Button></Link>
+           
+           <Link>
+           <Link to='/register'><Button variant="outline-primary">Register</Button></Link>
+           </Link>
+              </div>
             <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
             
