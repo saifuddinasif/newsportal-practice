@@ -5,6 +5,7 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 
 import { AuthContext } from './../Context/Context';
+import { toast } from 'react-hot-toast';
 
  
 const Login = () => {
@@ -50,7 +51,8 @@ const Login = () => {
 
             }
             else{
-          
+            toast.error('verify your email first');
+            
             }
 
          })

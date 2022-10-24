@@ -3,6 +3,7 @@ import Category from "../Category/Category";
 import Main from "../Layout/Main";
 import News from "../News/News";
 import Profile from "../Profile/Profile";
+import TermsCon from "../Register/Terms and Con/TermsCon";
 import Home from './../Home/Home';
 import Login from './../Login/Login';
 import Register from './../Register/Register';
@@ -65,6 +66,13 @@ export  const routes = createBrowserRouter([
          path : '/profile',
 
          element: <Profile></Profile>,
+     
+      },
+      {
+
+         path : '/terms',
+
+         element: <TermsCon></TermsCon>
      
       },
 

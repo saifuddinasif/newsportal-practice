@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 
-import {createUserWithEmailAndPassword, getAuth,  onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth,  onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../../Firebase';
 
  export  const AuthContext = createContext()
@@ -22,7 +22,15 @@ const Context = ({children}) => {
     useEffect(() => {
 
     const unsubscribe =onAuthStateChanged(auth, (currentUser) =>{
-             setUser(currentUser)
+
+         console.log(currentUser)
+         if( currentUser === null || currentUser.emailVerified){
+
+
+            setUser(currentUser)
+         }
+
+            
 
              setLoading(false)
 
@@ -60,7 +68,18 @@ const Context = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
 
-   const authInfo= {providerLogin,user ,loading,logOut,createUser,signIn}
+
+    const updateUserProfile = (profile) => {
+
+        return updateProfile(auth.currentUser,profile);
+    }
+
+    const  verifyEmail= () => {
+
+        return sendEmailVerification(auth.currentUser)
+    }
+
+   const authInfo= { updateUserProfile,providerLogin,user ,loading,logOut,createUser,signIn, verifyEmail, setLoading}
 
     return (
         <div>

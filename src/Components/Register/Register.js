@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from './../Context/Context';
@@ -39,6 +40,8 @@ const Register = () => {
         form.reset()
         handleupdateUserProfile(name,photoURL)
         handleEmailVeryfication()
+
+        toast.success('Verify Email ')
 
 
       })
