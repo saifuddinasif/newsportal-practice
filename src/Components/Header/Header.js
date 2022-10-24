@@ -47,8 +47,8 @@ const Header = () => {
         
               <Nav>
                         <>
-                            {
-                                user?
+                            { 
+                                user?.uid ? 
                                     <>
                                         <span>{user?.displayName}</span>
                                         <Button onClick={handleLogOut}  variant="light" >Log out</Button>
