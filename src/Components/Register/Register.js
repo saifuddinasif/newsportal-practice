@@ -2,8 +2,9 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-import { AuthContext } from './../../../../Context/AuthPro/AuthPro';
-import toast, { Toaster } from 'react-hot-toast';
+
+import { AuthContext } from './../Context/Context';
+
 const Register = () => {
  
     const {createUser,verifyEmail, updateUserProfile} =useContext(AuthContext)
@@ -38,7 +39,7 @@ const Register = () => {
         form.reset()
         handleupdateUserProfile(name,photoURL)
         handleEmailVeryfication()
-        toast.success('veryfy email');
+
 
       })
       .catch(e => { 

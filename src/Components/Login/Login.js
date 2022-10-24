@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../../Context/AuthPro/AuthPro';
-import toast, { Toaster } from 'react-hot-toast';
+
+
+import { AuthContext } from './../Context/Context';
+
 
 
 const Login = () => {
@@ -46,7 +48,7 @@ const Login = () => {
 
             }
             else{
-              toast.error('email not verified')
+          
             }
 
          })

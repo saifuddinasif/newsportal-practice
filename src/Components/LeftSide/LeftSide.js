@@ -23,7 +23,7 @@ const LeftSide = () => {
 
 
     return (
-        <div>
+        <div className='d-lg-block'>
             <h1>All Categories : {categories.length}</h1>
             {
                 categories.map (category => <p key={category.id}>
