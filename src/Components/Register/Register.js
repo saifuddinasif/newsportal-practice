@@ -51,6 +51,9 @@ const Register = () => {
       });
  } 
 
+
+    
+
   const handleEmailVeryfication = () =>{
 
     verifyEmail()

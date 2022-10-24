@@ -6,9 +6,11 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from './../Context/Context';
 
-
-
+ 
 const Login = () => {
+
+
+
     const navigate = useNavigate();
   const {signIn,setLoading} = useContext(AuthContext);
 
